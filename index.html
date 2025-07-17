@@ -651,12 +651,7 @@
             data-color_link="black"
             data-color_logo="orange"
           ></div></div></footer> --></div><script>
-   $(function() {
-            $("a[href^='#']").click(function() {
-                var _href = $(this).attr("href");
-                $("html, body").animate({
-                    scrollTop: $(_href).offset().top + "px"
-                });
+
                 return false;
             });
         });
