@@ -745,5 +745,18 @@
       });
     }
   });
+</script><script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const linksInternos = document.querySelectorAll('a[href^="#"]');
+    linksInternos.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const destino = document.querySelector(this.getAttribute("href"));
+        if (destino) {
+          destino.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  });
 </script>
 </body></html>
