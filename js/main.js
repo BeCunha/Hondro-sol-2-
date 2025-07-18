@@ -1,19 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const anchors = document.querySelectorAll("a[href^='#']");
-  for (let i = 0; i < anchors.length; i++) {
-    anchors[i].addEventListener("click", function (e) {
-      e.preventDefault();
-      const blockID = anchors[i].getAttribute("href").substring(1);
-      document.getElementById(blockID).scrollIntoView({ behavior: "smooth", block: "start" });
+document.addEventListener('DOMContentLoaded', function () {
+  // Scroll suave para âncoras
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
+  });
+
+  // Exibição condicional de seções (exemplo fictício de lógica preservada)
+  const toggleSection = document.querySelector('.toggle-section');
+  if (toggleSection) {
+    const btn = toggleSection.querySelector('.toggle-btn');
+    const content = toggleSection.querySelector('.toggle-content');
+    if (btn && content) {
+      btn.addEventListener('click', () => {
+        content.classList.toggle('active');
+      });
+    }
   }
 
-  const form = document.querySelector("form");
-  if (form) {
-    form.addEventListener("submit", function () {
-      setTimeout(function () {
-        window.location.href = "thankyou.html";
-      }, 1500);
-    });
-  }
+  // Adiar execuções de tracking (exemplo)
+  setTimeout(() => {
+    if (window.gtag) {
+      gtag('event', 'page_view');
+    }
+    if (window.fbq) {
+      fbq('track', 'PageView');
+    }
+  }, 2000);
 });
