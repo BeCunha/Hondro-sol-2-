@@ -1,81 +1,103 @@
 @font-face {
-  font-family: 'Bebas Neue';
+  font-family: 'BebasNeue';
   src: url('../fonts/bebasneuebold-webfont.woff2') format('woff2'),
        url('../fonts/bebasneuebold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
-
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Bebas Neue', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
 }
-
-h1, h2, h3 {
-  font-weight: bold;
+.header {
+  background: linear-gradient(to bottom, #f5f5f5, #fff);
+  padding: 20px 0;
+}
+.header__title {
+  font-family: 'BebasNeue', sans-serif;
+  font-size: 42px;
   text-align: center;
-  margin: 1rem 0;
+  margin: 0;
 }
-
-.top-bar {
+.header__content {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-bottom: 1px solid #ddd;
+  gap: 20px;
 }
-
-header {
-  background: #fff;
-  padding: 1rem;
+.header__text {
+  max-width: 400px;
+}
+.header__text ul {
+  padding-left: 20px;
+}
+.header__img img {
+  max-width: 250px;
+  height: auto;
+}
+.reviews {
+  padding: 40px 0;
+  background-color: #f0f0f0;
+}
+.section-title {
   text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
-
-.hero {
-  padding: 2rem;
-  text-align: center;
-  background: #eef;
-}
-
-.benefits ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-.benefits li {
-  padding: 0.5rem 0;
-  font-size: 1.2rem;
-}
-
-.testimonial, .before-after, .garantia {
-  padding: 2rem;
-  background: #fff;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.testimonial-group {
+.reviews__list {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
-
-footer {
-  background: #222;
+.review {
+  max-width: 300px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.review img {
+  width: 100%;
+  border-radius: 4px;
+}
+.review p {
+  margin: 10px 0;
+}
+.footer {
+  background-color: #222;
   color: #fff;
+  padding: 20px 0;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
 }
-
-/* Regras removidas por não serem utilizadas no HTML final:
-.button, .form-wrapper, .popup-container, .tracking-old
-*/
-
-/* fim do CSS */
+.footer__copy {
+  margin: 0;
+  font-size: 14px;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.top {
+  background: #e00000;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+}
+.top__text {
+  font-weight: bold;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .header__content {
+    flex-direction: column;
+  }
+  .header__img img {
+    max-width: 80%;
+  }
+}
