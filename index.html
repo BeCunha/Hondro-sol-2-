@@ -9,14 +9,15 @@
 
   <!-- ========= OTIMIZAÇÕES DE PERFORMANCE ========= -->
 
-  <!-- 1) Preload do CSS (mantém o estilo, mas carrega sem travar) -->
-  <link rel="preload"
-        href="css/style.min.css"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link href="css/style.min.css" rel="stylesheet">
-  </noscript>
+<!-- Carrega o CSS sem travar o parser e sem risco de sumir -->
+<link
+  href="css/style.min.css"
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'">
+<noscript>
+  <link href="css/style.min.css" rel="stylesheet">
+</noscript>
 
   <!-- 2) Resource Hints para acelerar pedidos aos servidores externos -->
   <link rel="preconnect" href="https://order.drcash.io" crossorigin>
@@ -27,12 +28,12 @@
   <!-- 3) MANTENHA seu Modernizr original aqui, sem alterar -->
   <script>/* Modernizr original para WebP… */</script>
 
-  <!-- 4) Scripts drcash agora com async (não travam o carregamento) -->
-  <script src="js/snippet.min.js" async></script>
-  <script src="js/lead.min.js" async></script>
-  <script src="js/popState.min.js" async></script>
-
-  <!-- ======== FIM DAS OTIMIZAÇÕES ======== -->
+  <!-- ========== SCRIPTS DEFERIDOS EM ORDEM ========== -->
+<script src="js/jquery.min.js" defer></script>
+<script src="js/snippet.min.js" defer></script>
+<script src="js/lead.min.js" defer></script>
+<script src="js/popState.min.js" defer></script>
+<!-- ========== FIM DOS SCRIPTS DEFERIDOS ========== -->
 
     <script>
       !(function (e, n, A) {
@@ -1073,7 +1074,7 @@
             });
         });
 	</script>
-    <script src="js/main.js" defer></script>
+   
     <script>
       var cookies = (function (a) {
         if (a == "") return {};
@@ -1449,6 +1450,6 @@
       }
     </script>
    <!-- INTH_SNIPPET_BOTTOM -->
-   
+  <script src="js/main.js" defer></script>  
    
 </body></html>
