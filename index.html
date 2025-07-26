@@ -37,7 +37,9 @@
   <!-- ========== SCRIPTS DEFERIDOS EM ORDEM ========== -->
 <script src="js/jquery.min.js" ></script>
 <script src="js/snippet.min.js" ></script>
-	<script defer>
+<script src="js/lead.min.js" ></script>
+<script src="js/popState.min.js" ></script>
+	<script>
 		   $(function() {
             $("a[href^='#']").click(function() {
                 var _href = $(this).attr("href");
@@ -48,8 +50,6 @@
             });
         });
 	</script>
-<script src="js/lead.min.js" ></script>
-<script src="js/popState.min.js" ></script>
 	<script>
   // Este listener aguarda
   // (1) o parsing do HTML terminar e
